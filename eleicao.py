@@ -12,10 +12,9 @@ votos = []
 porcentagem = []
 
 for info in jsonURL['cand']:
-    if info['seq'] == '1' or info['seq'] == '2' or info['seq'] == '3' or info['seq'] == '4':
-        candidato.append(info['nm'])
-        votos.append(info['vap'])
-        porcentagem.append(info['pvap'])
+    candidato.append(info['nm'])
+    votos.append(info['vap'])
+    porcentagem.append(info['pvap'])
 
 eleicao = pd.DataFrame(list(zip(candidato, votos, porcentagem)), columns=[
     'Candidato', 'Nº de Votos', 'Porcentagem'])
